@@ -1,4 +1,4 @@
-// Pokédex de la primera generación
+// 🧠 Pokédex de la primera generación
 const pokedex = [
   "Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon", "Charizard",
   "Squirtle", "Wartortle", "Blastoise", "Caterpie", "Metapod", "Butterfree",
@@ -27,20 +27,20 @@ const pokedex = [
   "Dragonite", "Mewtwo", "Mew"
 ];
 
-// Equipo del jugador
+// 🎒 Equipo Pokémon del jugador
 let equipoPokemon = [];
 
-// Función para limpiar y normalizar el nombre ingresado
+// 🧼 Función para normalizar el texto (ignora tildes, mayúsculas, espacios)
 function normalizarNombre(nombre) {
   return nombre
     .trim()
     .toLowerCase()
-    .normalize("NFD") // Normaliza letras con tilde
-    .replace(/[\u0300-\u036f]/g, "") // Elimina los tildes
-    .replace(/[^a-z0-9]/g, ""); // Elimina espacios, comillas, puntos, etc.
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]/g, ""); // quita símbolos, espacios, comillas, etc.
 }
 
-// Función principal para agregar Pokémon
+// 🧩 Función para agregar un Pokémon al equipo
 function agregarAlEquipo(nombre) {
   if (!nombre || typeof nombre !== "string") {
     alert("Por favor, ingresa un nombre válido.");
@@ -70,4 +70,44 @@ function agregarAlEquipo(nombre) {
   console.log("📦 Equipo actual:", equipoPokemon);
 }
 
-alert("¡Bienvenido! Esta Pokédex contiene los 151 Pokémon de la primera generación. Usa la consola con agregarAlEquipo('nombre') para armar tu equipo.");
+// 📋 Función para mostrar el equipo final
+function mostrarEquipoFinal() {
+  if (equipoPokemon.length === 0) {
+    alert("Aún no has agregado ningún Pokémon.");
+  } else {
+    alert("🎉 ¡Tu equipo está completo! Revisa la consola.");
+    console.log("🔽 TU EQUIPO POKÉMON 🔽");
+    equipoPokemon.forEach((poke, index) => {
+      console.log(`${index + 1}. ${poke}`);
+    });
+  }
+}
+
+// 🧼 Función para reiniciar todo
+function reiniciarEquipo() {
+  equipoPokemon = [];
+  alert("🔁 Has reiniciado tu equipo.");
+  console.clear();
+}
+
+// 🎮 Función interactiva con prompt + confirm
+function simuladorInteractivo() {
+  alert("¡Bienvenido! Esta Pokédex contiene los 151 Pokémon de la primera generación.");
+
+  while (equipoPokemon.length < 6) {
+    const nombre = prompt("Ingresa el nombre de un Pokémon para agregar (o escribe 'salir'):");
+
+    if (!nombre || nombre.toLowerCase() === "salir") {
+      const salir = confirm("¿Quieres salir y mostrar tu equipo?");
+      if (salir) break;
+      else continue;
+    }
+
+    agregarAlEquipo(nombre);
+  }
+
+  mostrarEquipoFinal();
+}
+
+// 🟢 Mensaje inicial (por si no usan el modo interactivo)
+alert("Usa la función agregarAlEquipo('nombre') en consola para armar tu equipo.\nTambién puedes ejecutar simuladorInteractivo() para usar el modo completo.");
