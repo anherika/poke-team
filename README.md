@@ -3,6 +3,10 @@
 
 Este proyecto es un simulador simple creado con **JavaScript puro**, que permite al usuario armar su propio equipo Pokémon de hasta 6 miembros usando solo **consola, prompt, confirm y alert**. Es una entrega académica centrada en practicar lógica de programación sin diseño visual.
 
+
+## 🚀 Version 0.3
+https://anherika.github.io/poke-team
+
 ## 🎯 Objetivo
 
 Simular la creación de un equipo Pokémon seleccionando criaturas desde una pequeña Pokédex, validando duplicados y límite de equipo. Todo se ejecuta directamente desde el navegador, en la **consola JS**.
