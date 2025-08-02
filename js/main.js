@@ -1,71 +1,193 @@
-// ------------------------------
-// VARIABLES Y CONSTANTES INICIALES
-// ------------------------------
+const pokedex = [
+	"Bulbasaur",
+	"Ivysaur",
+	"Venusaur",
+	"Charmander",
+	"Charmeleon",
+	"Charizard",
+	"Squirtle",
+	"Wartortle",
+	"Blastoise",
+	"Caterpie",
+	"Metapod",
+	"Butterfree",
+	"Weedle",
+	"Kakuna",
+	"Beedrill",
+	"Pidgey",
+	"Pidgeotto",
+	"Pidgeot",
+	"Rattata",
+	"Raticate",
+	"Spearow",
+	"Fearow",
+	"Ekans",
+	"Arbok",
+	"Pikachu",
+	"Raichu",
+	"Sandshrew",
+	"Sandslash",
+	"Nidoran♀",
+	"Nidorina",
+	"Nidoqueen",
+	"Nidoran♂",
+	"Nidorino",
+	"Nidoking",
+	"Clefairy",
+	"Clefable",
+	"Vulpix",
+	"Ninetales",
+	"Jigglypuff",
+	"Wigglytuff",
+	"Zubat",
+	"Golbat",
+	"Oddish",
+	"Gloom",
+	"Vileplume",
+	"Paras",
+	"Parasect",
+	"Venonat",
+	"Venomoth",
+	"Diglett",
+	"Dugtrio",
+	"Meowth",
+	"Persian",
+	"Psyduck",
+	"Golduck",
+	"Mankey",
+	"Primeape",
+	"Growlithe",
+	"Arcanine",
+	"Poliwag",
+	"Poliwhirl",
+	"Poliwrath",
+	"Abra",
+	"Kadabra",
+	"Alakazam",
+	"Machop",
+	"Machoke",
+	"Machamp",
+	"Bellsprout",
+	"Weepinbell",
+	"Victreebel",
+	"Tentacool",
+	"Tentacruel",
+	"Geodude",
+	"Graveler",
+	"Golem",
+	"Ponyta",
+	"Rapidash",
+	"Slowpoke",
+	"Slowbro",
+	"Magnemite",
+	"Magneton",
+	"Farfetch’d",
+	"Doduo",
+	"Dodrio",
+	"Seel",
+	"Dewgong",
+	"Grimer",
+	"Muk",
+	"Shellder",
+	"Cloyster",
+	"Gastly",
+	"Haunter",
+	"Gengar",
+	"Onix",
+	"Drowzee",
+	"Hypno",
+	"Krabby",
+	"Kingler",
+	"Voltorb",
+	"Electrode",
+	"Exeggcute",
+	"Exeggutor",
+	"Cubone",
+	"Marowak",
+	"Hitmonlee",
+	"Hitmonchan",
+	"Lickitung",
+	"Koffing",
+	"Weezing",
+	"Rhyhorn",
+	"Rhydon",
+	"Chansey",
+	"Tangela",
+	"Kangaskhan",
+	"Horsea",
+	"Seadra",
+	"Goldeen",
+	"Seaking",
+	"Staryu",
+	"Starmie",
+	"Mr. Mime",
+	"Scyther",
+	"Jynx",
+	"Electabuzz",
+	"Magmar",
+	"Pinsir",
+	"Tauros",
+	"Magikarp",
+	"Gyarados",
+	"Lapras",
+	"Ditto",
+	"Eevee",
+	"Vaporeon",
+	"Jolteon",
+	"Flareon",
+	"Porygon",
+	"Omanyte",
+	"Omastar",
+	"Kabuto",
+	"Kabutops",
+	"Aerodactyl",
+	"Snorlax",
+	"Articuno",
+	"Zapdos",
+	"Moltres",
+	"Dratini",
+	"Dragonair",
+	"Dragonite",
+	"Mewtwo",
+	"Mew",
+];
 
-const MAX_EQUIPO = 6;
-let equipoPokemon = [];
-const pokedex = ["Pikachu", "Charmander", "Bulbasaur", "Squirtle", "Eevee", "Snorlax", "Jigglypuff", "Psyduck"];
+const equipoPokemon = [];
 
-// ------------------------------
-// FUNCIONES DEL SIMULADOR
-// ------------------------------
+function agregarAlEquipo(nombre) {
+	nombre = nombre.trim();
+	const nombreFormateado =
+		nombre.charAt(0).toUpperCase() + nombre.slice(1).toLowerCase();
 
-// Función para mostrar la Pokédex disponible
-function mostrarPokedex() {
-  console.log("📘 Pokédex disponible:");
-  pokedex.forEach((pokemon, index) => {
-    console.log(`${index + 1}. ${pokemon}`);
-  });
+	if (!pokedex.includes(nombreFormateado)) {
+		alert("❌ Ese Pokémon no está en la Pokédex de Kanto.");
+		return;
+	}
+
+	if (equipoPokemon.includes(nombreFormateado)) {
+		alert("⚠️ Ese Pokémon ya está en tu equipo.");
+		return;
+	}
+
+	if (equipoPokemon.length >= 6) {
+		alert("🚫 Ya tienes 6 Pokémon en tu equipo.");
+		return;
+	}
+
+	equipoPokemon.push(nombreFormateado);
+	alert(`✅ ${nombreFormateado} fue agregado a tu equipo.`);
+
+	console.log("📦 Equipo actual:", equipoPokemon);
 }
 
-// Función para agregar un Pokémon al equipo
-function agregarPokemon() {
-  mostrarPokedex();
+// Mostrar la lista en el HTML
+const lista = document.getElementById("lista-pokemon");
+pokedex.forEach((poke) => {
+	const li = document.createElement("li");
+	li.textContent = poke;
+	lista.appendChild(li);
+});
 
-  while (equipoPokemon.length < MAX_EQUIPO) {
-    let eleccion = prompt(`¿Qué Pokémon quieres agregar a tu equipo? (escribe su nombre o "salir")`);
-
-    if (!eleccion) continue;
-    eleccion = eleccion.trim();
-
-    if (eleccion.toLowerCase() === "salir") {
-      let confirmacion = confirm("¿Estás segur@ que quieres terminar?");
-      if (confirmacion) break;
-      else continue;
-    }
-
-    if (!pokedex.includes(eleccion)) {
-      alert("❌ Ese Pokémon no está en la Pokédex.");
-      continue;
-    }
-
-    if (equipoPokemon.includes(eleccion)) {
-      alert("⚠️ Ese Pokémon ya está en tu equipo.");
-      continue;
-    }
-
-    equipoPokemon.push(eleccion);
-    alert(`✅ ${eleccion} fue agregado a tu equipo (${equipoPokemon.length}/${MAX_EQUIPO})`);
-  }
-}
-
-// Función para mostrar el equipo final
-function mostrarEquipoFinal() {
-  if (equipoPokemon.length === 0) {
-    alert("❌ No agregaste ningún Pokémon.");
-  } else {
-    alert("✅ Tu equipo está completo. Revisa la consola.");
-    console.log("🔥 EQUIPO FINAL 🔥");
-    equipoPokemon.forEach((poke, i) => {
-      console.log(`${i + 1}. ${poke}`);
-    });
-  }
-}
-
-// ------------------------------
-// INICIO DEL SIMULADOR
-// ------------------------------
-
-alert("¡Bienvenido/a al simulador de equipo Pokémon!");
-agregarPokemon();
-mostrarEquipoFinal();
+alert(
+	"¡Bienvenido! Esta Pokédex contiene los 151 Pokémon de la primera generación. Usa la consola para armar tu equipo."
+);

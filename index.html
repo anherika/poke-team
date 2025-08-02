@@ -1,16 +1,202 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Simulador de Equipo Pokémon</title>
-</head>
-<body>
-  <h1>Simulador de Equipo Pokémon</h1>
-  <p>
-    Este simulador permite al usuario armar su equipo Pokémon favorito con hasta 6 integrantes.
-    Toda la interacción se realiza con cuadros de diálogo y en la consola del navegador.
-  </p>
 
-  <script src="js/main.js"></script>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyecto: Simulador de Equipo Pokémon</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Simulador de Equipo Pokémon</h1>
+    </header>
+
+    <section>
+        <h2>¿De qué trata este proyecto?</h2>
+        <p>
+            Este es un simulador en JavaScript que corre desde la consola del navegador. <br>
+            Te permite armar tu propio equipo Pokémon seleccionando criaturas
+            únicamente de la <strong>primera generación (Kanto, #001–#151)</strong>.
+        </p>
+        <p>
+        <h2>¿Cómo usarlo?</h2>
+        Puedes agregar hasta 6 Pokémon. <br>
+        Si intentas añadir uno repetido o fuera de la primera gen, el sistema te dará un mensajito.
+
+        <h2>Funcionamiento</h2>
+        Todo se controla por consola usando la función:
+        </p>
+        <code>agregarAlEquipo("pikachu")</code>
+    </section>
+
+    <section>
+        <h2>¿Qué Pokémon puedo agregar?</h2>
+        <p>Aquí tienes la lista completa de Pokémon válidos:</p>
+        <div class="pokemon-grid">
+            <ul>
+                <li>Bulbasaur</li>
+                <li>Ivysaur</li>
+                <li>Venusaur</li>
+                <li>Charmander</li>
+                <li>Charmeleon</li>
+                <li>Charizard</li>
+                <li>Squirtle</li>
+                <li>Wartortle</li>
+                <li>Blastoise</li>
+                <li>Caterpie</li>
+                <li>Metapod</li>
+                <li>Butterfree</li>
+                <li>Weedle</li>
+                <li>Kakuna</li>
+                <li>Beedrill</li>
+                <li>Pidgey</li>
+                <li>Pidgeotto</li>
+                <li>Pidgeot</li>
+                <li>Rattata</li>
+                <li>Raticate</li>
+                <li>Spearow</li>
+                <li>Fearow</li>
+                <li>Ekans</li>
+                <li>Arbok</li>
+                <li>Pikachu</li>
+                <li>Raichu</li>
+                <li>Sandshrew</li>
+                <li>Sandslash</li>
+                <li>Nidoran♀</li>
+                <li>Nidorina</li>
+                <li>Nidoqueen</li>
+                <li>Nidoran♂</li>
+                <li>Nidorino</li>
+                <li>Nidoking</li>
+                <li>Clefairy</li>
+                <li>Clefable</li>
+                <li>Vulpix</li>
+                <li>Ninetales</li>
+                <li>Jigglypuff</li>
+                <li>Wigglytuff</li>
+                <li>Zubat</li>
+                <li>Golbat</li>
+                <li>Oddish</li>
+                <li>Gloom</li>
+                <li>Vileplume</li>
+                <li>Paras</li>
+                <li>Parasect</li>
+                <li>Venonat</li>
+                <li>Venomoth</li>
+                <li>Diglett</li>
+                <li>Dugtrio</li>
+                <li>Meowth</li>
+                <li>Persian</li>
+                <li>Psyduck</li>
+                <li>Golduck</li>
+                <li>Mankey</li>
+                <li>Primeape</li>
+                <li>Growlithe</li>
+                <li>Arcanine</li>
+                <li>Poliwag</li>
+                <li>Poliwhirl</li>
+                <li>Poliwrath</li>
+                <li>Abra</li>
+                <li>Kadabra</li>
+                <li>Alakazam</li>
+                <li>Machop</li>
+                <li>Machoke</li>
+                <li>Machamp</li>
+                <li>Bellsprout</li>
+                <li>Weepinbell</li>
+                <li>Victreebel</li>
+                <li>Tentacool</li>
+                <li>Tentacruel</li>
+                <li>Geodude</li>
+                <li>Graveler</li>
+                <li>Golem</li>
+                <li>Ponyta</li>
+                <li>Rapidash</li>
+                <li>Slowpoke</li>
+                <li>Slowbro</li>
+                <li>Magnemite</li>
+                <li>Magneton</li>
+                <li>Farfetch’d</li>
+                <li>Doduo</li>
+                <li>Dodrio</li>
+                <li>Seel</li>
+                <li>Dewgong</li>
+                <li>Grimer</li>
+                <li>Muk</li>
+                <li>Shellder</li>
+                <li>Cloyster</li>
+                <li>Gastly</li>
+                <li>Haunter</li>
+                <li>Gengar</li>
+                <li>Onix</li>
+                <li>Drowzee</li>
+                <li>Hypno</li>
+                <li>Krabby</li>
+                <li>Kingler</li>
+                <li>Voltorb</li>
+                <li>Electrode</li>
+                <li>Exeggcute</li>
+                <li>Exeggutor</li>
+                <li>Cubone</li>
+                <li>Marowak</li>
+                <li>Hitmonlee</li>
+                <li>Hitmonchan</li>
+                <li>Lickitung</li>
+                <li>Koffing</li>
+                <li>Weezing</li>
+                <li>Rhyhorn</li>
+                <li>Rhydon</li>
+                <li>Chansey</li>
+                <li>Tangela</li>
+                <li>Kangaskhan</li>
+                <li>Horsea</li>
+                <li>Seadra</li>
+                <li>Goldeen</li>
+                <li>Seaking</li>
+                <li>Staryu</li>
+                <li>Starmie</li>
+                <li>Mr. Mime</li>
+                <li>Scyther</li>
+                <li>Jynx</li>
+                <li>Electabuzz</li>
+                <li>Magmar</li>
+                <li>Pinsir</li>
+                <li>Tauros</li>
+                <li>Magikarp</li>
+                <li>Gyarados</li>
+                <li>Lapras</li>
+                <li>Ditto</li>
+                <li>Eevee</li>
+                <li>Vaporeon</li>
+                <li>Jolteon</li>
+                <li>Flareon</li>
+                <li>Porygon</li>
+                <li>Omanyte</li>
+                <li>Omastar</li>
+                <li>Kabuto</li>
+                <li>Kabutops</li>
+                <li>Aerodactyl</li>
+                <li>Snorlax</li>
+                <li>Articuno</li>
+                <li>Zapdos</li>
+                <li>Moltres</li>
+                <li>Dratini</li>
+                <li>Dragonair</li>
+                <li>Dragonite</li>
+                <li>Mewtwo</li>
+                <li>Mew</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>Hecho con amor para la clase de JavaScript</p>
+    </footer>
+
+    <script src="app.js"></script>
 </body>
+
 </html>
