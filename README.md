@@ -1,4 +1,5 @@
-# 🤖 Simulador de Equipo Pokémon / POKE-TEAM
+
+# 🤖 Equipo Pokémon / POKE-TEAM
 
 Este proyecto es un simulador simple creado con **JavaScript puro**, que permite al usuario armar su propio equipo Pokémon de hasta 6 miembros usando solo **consola, prompt, confirm y alert**. Es una entrega académica centrada en practicar lógica de programación sin diseño visual.
 
