@@ -1,3 +1,4 @@
+// Pokédex de la primera generación
 const pokedex = [
 	"Bulbasaur",
 	"Ivysaur",
@@ -152,19 +153,24 @@ const pokedex = [
 	"Mew",
 ];
 
-const equipoPokemon = [];
+let equipoPokemon = [];
 
 function agregarAlEquipo(nombre) {
-	nombre = nombre.trim();
-	const nombreFormateado =
-		nombre.charAt(0).toUpperCase() + nombre.slice(1).toLowerCase();
+	if (!nombre || typeof nombre !== "string") {
+		alert("Por favor, ingresa un nombre válido.");
+		return;
+	}
 
-	if (!pokedex.includes(nombreFormateado)) {
+	// Normalizar entrada (capitalizar primera letra y comparar sin distinción)
+	const nombreFormateado = nombre.trim().toLowerCase();
+	const encontrado = pokedex.find((p) => p.toLowerCase() === nombreFormateado);
+
+	if (!encontrado) {
 		alert("❌ Ese Pokémon no está en la Pokédex de Kanto.");
 		return;
 	}
 
-	if (equipoPokemon.includes(nombreFormateado)) {
+	if (equipoPokemon.includes(encontrado)) {
 		alert("⚠️ Ese Pokémon ya está en tu equipo.");
 		return;
 	}
@@ -174,20 +180,11 @@ function agregarAlEquipo(nombre) {
 		return;
 	}
 
-	equipoPokemon.push(nombreFormateado);
-	alert(`✅ ${nombreFormateado} fue agregado a tu equipo.`);
-
+	equipoPokemon.push(encontrado);
+	alert(`✅ ${encontrado} fue agregado a tu equipo.`);
 	console.log("📦 Equipo actual:", equipoPokemon);
 }
 
-// Mostrar la lista en el HTML
-const lista = document.getElementById("lista-pokemon");
-pokedex.forEach((poke) => {
-	const li = document.createElement("li");
-	li.textContent = poke;
-	lista.appendChild(li);
-});
-
 alert(
-	"¡Bienvenido! Esta Pokédex contiene los 151 Pokémon de la primera generación. Usa la consola para armar tu equipo."
+	"¡Bienvenido! Esta Pokédex contiene los 151 Pokémon de la primera generación. Usa la consola para armar tu equipo con: agregarAlEquipo('nombre')"
 );
