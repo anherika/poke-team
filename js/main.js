@@ -111,3 +111,4 @@ function simuladorInteractivo() {
 
 // 🟢 Mensaje inicial (por si no usan el modo interactivo)
 alert("Usa la función agregarAlEquipo('nombre') en consola para armar tu equipo.\nTambién puedes ejecutar simuladorInteractivo() para usar el modo completo.");
+simuladorInteractivo();
