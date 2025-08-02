@@ -21,7 +21,7 @@ Simular la creación de un equipo Pokémon seleccionando criaturas desde una peq
 poke-team/
 ├── index.html
 └── js/
-└── main.js
+    └── main.js
 ```
 
 ---
