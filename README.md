@@ -17,11 +17,12 @@ Simular la creación de un equipo Pokémon seleccionando criaturas desde una peq
 ---
 
 ## 📂 Estructura del proyecto
+```
 poke-team/
 ├── index.html
 └── js/
 └── main.js
-
+```
 
 ---
 
