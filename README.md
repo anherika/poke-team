@@ -1,64 +1,95 @@
+# Poke Team ✨  
+_Busca, elige y arma tu team Pokémon (Kanto) directo en el navegador._
 
-# 🤖 Equipo Pokémon / POKE-TEAM
+> (**Disclaimer**) Proyecto de **fans para fans**. No hay fines de lucro; no soy dueña de Pokémon ni de sus assets. Créditos a **The Pokémon Company**, **Game Freak**, **Nintendo** y a **PokeAPI** por datos y sprites. (´• ω •`) ♡
 
-Este proyecto es un simulador simple creado con **JavaScript puro**, que permite al usuario armar su propio equipo Pokémon de hasta 6 miembros usando solo **consola, prompt, confirm y alert**. Es una entrega académica centrada en practicar lógica de programación sin diseño visual.
-
-
-## 🚀 Version 0.3
-https://anherika.github.io/poke-team
-
-## 🎯 Objetivo
-
-Simular la creación de un equipo Pokémon seleccionando criaturas desde una pequeña Pokédex, validando duplicados y límite de equipo. Todo se ejecuta directamente desde el navegador, en la **consola JS**.
+## Demo / Preview
+- **Live (opcional):** _link aquí si lo publico_
+- **Screenshots:**  
+  ![UI](./docs/preview.png)
 
 ---
 
-## 🛠️ Tecnologías usadas
-
-- HTML5
-- JavaScript (ES6)
-- Consola del navegador (DevTools)
+## ¿Qué hace esta app?
+- 🔎 **Búsqueda** por nombre/tipo.
+- 🧾 **Pokédex Kanto (151)** con sprites animados (GIF) + fallback a PNG.
+- 🧠 **Detalle** del Pokémon (número + tipos con chips de color).
+- 🧑‍🤝‍🧑 **Equipo de 6** (sí, **6/6**): agregas desde el detalle y quitas con una ❌.
+- 📦 **Persistencia** con `localStorage`.
+- 🧭 **Estados**:
+  - En la lista, los añadidos quedan **deshabilitados** con “✓ En tu equipo”.
+  - El botón **Agregar** cambia: “Ya está en tu equipo”, “Equipo completo”, etc.
+- 📱 **Responsive**:
+  - En mobile, la Pokédex se compacta (scroll interno) y no tapa el detalle.
+  - Botón **“Vaciar / Empezar de nuevo”** **sticky** al fondo del panel.
+- 🧼 **Accesible-ish**: `aria-live` para mensajes y colores legibles.
 
 ---
+
+## Stack
+- **HTML + CSS + JS vanilla** (sin frameworks).
+- **PokeAPI** para completar Kanto y traer sprites (GIF Gen V).
+- **LocalStorage** para persistir el team.
+
+---
+
+## Cómo usar
+1. Busca o navega la Pokédex.
+2. **Click** en una card para ver detalle.
+3. **Agregar** desde el panel derecho (máximo **6**).
+4. Quita del team con la **❌**.
+5. Al llegar a **6/6**, verás “¡Tu equipo está listo!” y puedes **Empezar de nuevo**.
+
+> Si un Pokémon ya está en tu team, su card se ve **gris** y con “✓ En tu equipo”.
+
+---
+
+## Estructura
 
 ## 📂 Estructura del proyecto
 ```
-poke-team/
-├── index.html
-└── js/
-    └── main.js
+.
+├─ index.html
+├─ style/
+│  └─ style.css
+├─ js/
+│  ├─ app.js
+│  └─ data/
+│     └─ pokedex.js
+└─ assets/ 
 ```
 
 ---
 
-## 🚀 Cómo usarlo
+---
 
-1. **Clona o descarga** este repositorio.
-2. Abre el archivo `index.html` con tu navegador.
-3. Abre la consola de desarrollador (`F12` o clic derecho → *Inspeccionar* → pestaña *Consola*).
-4. Sigue las instrucciones en pantalla y en los cuadros de diálogo.
+## Correr local
+**VS Code + Live Server** (fácil)  
+o en consola:
+
+```bash
+npx serve .
+# o
+npx http-server -c-1 .
 
 ---
 
-## 🔄 Funcionalidades
 
-- ✅ Mostrar Pokédex disponible en consola.
-- ✅ Elegir Pokémon desde `prompt()`.
-- ✅ Validación de duplicados.
-- ✅ Límite de equipo (máximo 6).
-- ✅ Confirmación visual por `alert()`.
-- ✅ Mostrar equipo final en consola.
+## Updates de la version
 
----
-
-## 📦 Estado del proyecto
-
-🔸 **Primera entrega:** lógica central implementada.  (Aún con pruebas)
-🔸 Futuras mejoras incluirán diseño más visual, guardado y más Pokémon.
+✅ DOM + Eventos
+	•	✅ Storage (localStorage)
+	•	✅ Sin prompts/alerts bloqueantes
+	•	✅ Funciones, arrays, objetos
+	•	✅ HTML/CSS/JS separados y referenciados
 
 ---
 
 ## 📜 Créditos
 
-Hecho con cariño por Angelica Tenorio (Anherika) ✨  
-Primera entrega de curso de Javascript para CoderHouse.
+	•	PokeAPI: https://pokeapi.co/
+	•	Todos los derechos de las imagenes son de Pokémon © Nintendo, Game Freak, The Pokémon Company.
+	•	Proyecto fanmade y no comercial.
+	•	Hecho con cariño por Angelica Tenorio (Anherika) ✨  
+
+Segunda entrega de curso de Javascript para CoderHouse.
