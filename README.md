@@ -22,7 +22,7 @@ _Busca, elige y arma tu team Pokémon (Kanto) directo en el navegador._
 - 📱 **Responsive**:
   - En mobile, la Pokédex se compacta (scroll interno) y no tapa el detalle.
   - Botón **“Vaciar / Empezar de nuevo”** **sticky** al fondo del panel.
-- 🧼 **Accesible-ish**: `aria-live` para mensajes y colores legibles.
+- 🧼 **"Accesible"**: `aria-live` para mensajes y colores legibles uwu (perdón por tan poco).
 
 ---
 
