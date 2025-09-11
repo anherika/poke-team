@@ -4,10 +4,10 @@ _Busca, elige y arma tu team Pokémon (Kanto) directo en el navegador._
 > (**Disclaimer**) Proyecto de **fans para fans**. No hay fines de lucro; no soy dueña de Pokémon ni de sus assets. Créditos a **The Pokémon Company**, **Game Freak**, **Nintendo** y a **PokeAPI** por datos y sprites. (´• ω •`) ♡
 
 ## Demo / Preview
-- **Live (opcional):** _link aquí si lo publico_
+- **Live** • https://anherika.github.io/poke-team/	
 - **Screenshots:**  
-  ![UI](./docs/preview.png)
-
+  Hubo errores técnicos xD
+  
 ---
 
 ## ¿Qué hace esta app?
@@ -64,7 +64,7 @@ _Busca, elige y arma tu team Pokémon (Kanto) directo en el navegador._
 ---
 
 ## Correr local
-**VS Code + Live Server** (fácil)  
+**VS Code + Live Server**   
 o en consola:
 
 ```bash
@@ -73,7 +73,6 @@ npx serve .
 npx http-server -c-1 .
 
 ---
-
 
 ## Updates de la version
 
