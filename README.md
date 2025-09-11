@@ -71,6 +71,7 @@ o en consola:
 npx serve .
 # o
 npx http-server -c-1 .
+```
 
 ---
 
