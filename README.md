@@ -5,8 +5,8 @@ _Busca, elige y arma tu team Pokémon (Kanto) directo en el navegador._
 
 ## Demo / Preview
 - **Live** • https://anherika.github.io/poke-team/	
-- **Screenshots:**  
-  Hubo errores técnicos xD
+- **Screenshots-Demo:**  
+  ![Demo](./assets/demo.gif)
   
 ---
 
@@ -23,6 +23,7 @@ _Busca, elige y arma tu team Pokémon (Kanto) directo en el navegador._
   - En mobile, la Pokédex se compacta (scroll interno) y no tapa el detalle.
   - Botón **“Vaciar / Empezar de nuevo”** **sticky** al fondo del panel.
 - 🧼 **"Accesible"**: `aria-live` para mensajes y colores legibles uwu (perdón por tan poco).
+- ✨ **"Nuevos mensajes"** `SweetAlert2` para reemplazar alert, prompt y confirm por modales bonitos y personalizables.
 
 ---
 
@@ -30,6 +31,7 @@ _Busca, elige y arma tu team Pokémon (Kanto) directo en el navegador._
 - **HTML + CSS + JS vanilla** (sin frameworks).
 - **PokeAPI** para completar Kanto y traer sprites (GIF Gen V).
 - **LocalStorage** para persistir el team.
+- **Modales de SweetAlert2** Esto NUEVO!!!!! * - *
 
 ---
 
@@ -79,7 +81,7 @@ npx http-server -c-1 .
 
 ✅ DOM + Eventos
 	•	✅ Storage (localStorage)
-	•	✅ Sin prompts/alerts bloqueantes
+	•	✅ Nuevos notificaciones (libreria nueva)
 	•	✅ Funciones, arrays, objetos
 	•	✅ HTML/CSS/JS separados y referenciados
 
@@ -92,4 +94,4 @@ npx http-server -c-1 .
 	•	Proyecto fanmade y no comercial.
 	•	Hecho con cariño por Angelica Tenorio (Anherika) ✨  
 
-Segunda entrega de curso de Javascript para CoderHouse.
+Entrega final de curso de Javascript para CoderHouse.
